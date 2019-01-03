@@ -4,27 +4,198 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hangman</title>
-  <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <title>Making life easier</title>
 </head>
 <body>
-  <div class="title">
-    <h1>Welcome to Hangman</h1>
+  <canvas></canvas>
+  <div class="page-wrapper">
+    <section class="welcome-section">
+      <div class="welcome-text">
+        <h1>Hello there!</h1>
+      </div>
+    </section>
+    <div class="content-wrapper">
+      <section class="hello-section">
+        <div class="hello-title">
+          <h2>I'm Borna Sepic <span class="hello-subtitle">Welcome to my little corner of the internet</span></h2>
+        </div>
+        <div class="hello-content">
+          <div class="hello-art">
+            <svg height="200px" viewBox="0 -55 512 512" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="m498.679688 341.15625h-19.691407c7.945313-8.472656 12.824219-19.851562 12.824219-32.355469v-261.445312c0-26.109375-21.242188-47.355469-47.355469-47.355469h-170.957031c-4.144531 0-7.5 3.359375-7.5 7.5 0 4.144531 3.355469 7.5 7.5 7.5h170.957031c17.839844 0 32.355469 14.515625 32.355469 32.355469v261.445312c0 17.839844-14.515625 32.355469-32.355469 32.355469-10.28125 0-340.09375 0-368.980469 0-17.839843 0-32.355468-14.515625-32.355468-32.355469v-261.445312c0-17.839844 14.515625-32.355469 32.355468-32.355469h163.023438c4.140625 0 7.5-3.355469 7.5-7.5 0-4.140625-3.359375-7.5-7.5-7.5h-163.019531c-26.113281 0-47.359375 21.242188-47.359375 47.355469v261.445312c0 12.503907 4.882812 23.882813 12.824218 32.355469h-27.625c-7.34375 0-13.320312 5.976562-13.320312 13.320312v12.09375c0 19.027344 15.480469 34.503907 34.507812 34.503907h442.984376c19.027343 0 34.507812-15.476563 34.507812-34.503907v-12.09375c0-7.34375-5.976562-13.320312-13.320312-13.320312zm-173.730469 15v2.957031c0 2.441407-2.0625 4.5-4.5 4.5h-120.984375c-2.441406 0-4.5-2.058593-4.5-4.5v-2.957031zm172.050781 10.414062c0 10.753907-8.75 19.503907-19.507812 19.503907h-442.984376c-10.757812 0-19.507812-8.75-19.507812-19.503907v-10.414062h164.964844v2.957031c0 10.753907 8.746094 19.503907 19.5 19.503907h120.984375c10.75 0 19.5-8.75 19.5-19.503907v-2.957031h157.050781zm0 0"/><path d="m78.175781 36.078125c-7.582031 0-13.753906 6.171875-13.753906 13.753906v256.101563c0 7.582031 6.171875 13.753906 13.753906 13.753906h363.558594c7.585937 0 13.753906-6.171875 13.753906-13.753906 0-9.300782 0-245.269532 0-256.101563 0-7.582031-6.167969-13.753906-13.753906-13.753906-1.410156 0-356.03125 0-363.558594 0zm1.246094 15h32.269531v23.730469h-32.269531zm0 253.609375v-214.878906h361.066406v214.878906zm361.066406-229.878906h-313.792969v-23.730469h313.792969zm0 0"/><path fill="red" d="m255.996094 145.660156c-23.582032-35.308594-80.046875-19.027344-80.046875 24.523438 0 54.863281 56.324219 86.808594 73.578125 95.285156 4.050781 2 8.886718 1.996094 12.9375-.003906 15.910156-7.851563 54.4375-30.136719 68.46875-67.441406 1.460937-3.875-.5-8.203126-4.378906-9.660157-3.875-1.457031-8.203126.503907-9.660157 4.378907-12.425781 33.035156-49.519531 53.550781-60.902343 59.1875-15.484376-7.632813-65.039063-35.714844-65.039063-81.746094 0-29.367188 39.304687-39.722656 53.816406-14.167969 1.445313 2.542969 5.550781 6.136719 10.890625 6.269531 5.1875.125 9.792969-3.199218 11.46875-6.136718 13.480469-23.640626 46.851563-16.671876 52.925782 6.164062 1.066406 4 5.179687 6.382812 9.175781 5.320312 4.003906-1.066406 6.386719-5.175781 5.320312-9.179687-9.226562-34.671875-57.171875-44.429687-78.554687-12.792969zm0 0"/></svg>
+          </div>
+          <div class="about-text">
+            <h2>Hi! I'm Borna, a web developer with close to two years of experiences in a wide range of disciplines.</h2> 
+            <h2>Currently helping various small businesses by introducing their brands to the wonders of the WWW.</h2>
+          </div>
+        </div>
+      </section>
+      <section class="about-section">
+        <h1 class="section-title">About</h1>
+        <div class="about-wrapper">
+          <div class="bio-wrapper">
+            <p>My journey as a web developer started at the age of 14 when I first came across HTML and CSS while attending a classical gymnasium in Pazin. Unfortunately, at the time, I focused more on my academic life and neglected to hone my web development skills.</p>
+            <p>Fast forward four years, while attending the Faculty of Civil Engineering in Rijeka I realized where my true passion lies. Within a years time, I was able to quit university and transition into a full-time job as a freelancer.</p>
+            <p>I'm currently working with several smaller business on various projects, as well as spending a considerable portion of my free time learning new technologies and trying to stay on top of the ever-changing landscape of modern web development.  </p>
+          </div>
+          <div class="profile-picture"></div>
+        </div>
+      </section>      
+      <section class="testemonial-section">
+        <h1 class="section-title">What others had to say about me</h1>
+        <div class="testemonial-wrapper">
+          <div class="testemonial">
+            <div class="quotemark">
+              <?xml version="1.0" encoding="iso-8859-1"?>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 298.667 298.667" style="height: 40px;" xml:space="preserve">
+              <g>
+                <g>
+                  <g>
+                    <polygon points="0,170.667 64,170.667 21.333,256 85.333,256 128,170.667 128,42.667 0,42.667 			"/>
+                    <polygon points="170.667,42.667 170.667,170.667 234.667,170.667 192,256 256,256 298.667,170.667 298.667,42.667 			"/>
+                  </g>
+                </g>
+              </g>
+              </svg>
+            </div>
+            <p>Excellent experience. Fast and efficient delivery! Great communication. Will work with you again! Thank you!</p>
+            <h5 class="client-name">Miguel Franco</h5>
+          </div>
+          <div class="testemonial">
+              <div class="quotemark">
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   viewBox="0 0 298.667 298.667" style="height: 40px;" xml:space="preserve">
+                <g>
+                  <g>
+                    <g>
+                      <polygon points="0,170.667 64,170.667 21.333,256 85.333,256 128,170.667 128,42.667 0,42.667 			"/>
+                      <polygon points="170.667,42.667 170.667,170.667 234.667,170.667 192,256 256,256 298.667,170.667 298.667,42.667 			"/>
+                    </g>
+                  </g>
+                </g>
+                </svg>
+              </div>
+              <p>Borna was a really great partner to work with. He was very communicative, prompt and more importantly worked hard to find solutions to ensure the client was happy at the end of the day. Would definitely recommend and use again.</p>
+              <h5 class="client-name">Adriana Mahalean</h5>
+            </div>
+            <div class="testemonial">
+              <div class="quotemark">
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 298.667 298.667" style="height: 40px;" xml:space="preserve">
+                <g>
+                  <g>
+                    <g>
+                      <polygon points="0,170.667 64,170.667 21.333,256 85.333,256 128,170.667 128,42.667 0,42.667 			"/>
+                      <polygon points="170.667,42.667 170.667,170.667 234.667,170.667 192,256 256,256 298.667,170.667 298.667,42.667 			"/>
+                    </g>
+                  </g>
+                </g>
+                </svg>
+              </div>
+              <p>Exceptional freelancer. One of the rare freelancers you can trust to deliver work of the highest quality. Always on time and always on/below budget.</p>
+              <h5 class="client-name">Ben McInerney</h5>
+            </div>
+        </div>
+      </section>
+      <section class="side-projects-section active">
+        <h1 class="section-title">Side Projects</h1>
+        <div class="side-projects-wrapper">
+          <div class="side-project">
+            <div class="cover-photo">
+              <img src="./photos/personal-project-logos/suicide-risk.png" alt="" srcset="">
+            </div>
+            <h2>Hangman Game</h2>
+            <div class="arrow-holder">
+              <div class="first-arrow arrow"></div>
+              <div class="second-arrow arrow"></div>
+            </div>
+            <div class="popup-content">
+              <ul class="tech-used">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaSript</li>
+                <li>Canvas</li>
+              </ul>
+              <a class="project-link" target="_blank" href="./hangman/index.html">Take a Look</a>
+            </div>
+          </div>
+          <div class="side-project">
+            <div class="cover-photo">
+              <img src="./photos/personal-project-logos/weather-cover-2.png" alt="" srcset="">
+            </div>
+            <h2>Weather Info</h2>
+            <div class="arrow-holder">
+              <div class="first-arrow arrow"></div>
+              <div class="second-arrow arrow"></div>
+            </div>
+            <div class="popup-content">
+              <ul class="tech-used">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaSript</li>
+                <li>Vue.js</li>
+                <li>Express</li>
+              </ul>
+              <a class="project-link" target="_blank" href="./weather/index.html">Take a Look</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="portfolio-section">
+        <h1 class="section-title">Some of my work</h1>
+
+        <div class="project-wrapper">
+          <div class="project">
+            <a target="_blank" href="https://www.gotreequotes.com.au/">
+              <img src="./photos/project-logos/gotreequotes-desktop.png" alt="GoTreeQuotes">
+            </a>
+          </div>
+          <div class="project">
+            <a target="_blank" href="https://geteveryday.com/">
+              <img src="./photos/project-logos/everyday-desktop.png" alt="Everyday-for every body">
+            </a>
+          </div>
+          <div class="project">
+            <a target="_blank" href="https://buyballhawks.com/">
+              <img src="./photos/project-logos/ballhawks_desktop.png" alt="Ballhawks-the golf finding glasses">
+            </a>
+          </div>
+          <div class="project">
+            <a target="_blank" href="https://www.dmbrandconsulting.com/">
+              <img src="./photos/project-logos/darla-desktop.png" alt="DM-Brand Consulting">
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="links-section">
+        <h1 class="section-title">Contact me</h1>
+        <div class="links-wrapper">
+          <a target="_blank" href="https://github.com/BornaSepic">
+            <img src="./photos/contact-logos/github.png" alt="Github">
+          </a>
+          <a target="_blank" href="https://twitter.com/atlas_se">
+            <img src="./photos/contact-logos/twitter-icon.png" alt="Twitter">
+          </a>
+          <a target="_blank" href="https://www.upwork.com/o/profiles/users/_~0115fdad3f2bca7cc1/">
+            <img src="./photos/contact-logos/upwork.png" alt="Upwork">
+          </a>
+          <a target="_blank" href="mailto:bornasepic98@gmail.com">
+            <img src="./photos/contact-logos/gmail.png" alt="Email">
+          </a>
+        </div>
+      </section>
+      <div class="fixed-content-wrapper">
+        <div class="footer-shape"></div>
+          <p class="copyright">Borna Sepic © 2018 </p>
+        </div>
+      </div>
+    <script src="canvas.js"></script>
+    <script src="animation.js"></script>
   </div>
-  <div class="game-wrapper">
-    <div class="words-container"></div>
-    <div class="info-wrapper">
-      <canvas></canvas>
-      <h1 class="chances">You have <span id="mistakeCounter"></span> chances left!</h1>
-    </div>
-  </div>
-  <div class="result-banner">
-    <h2 class="result-message"></h2>
-    <h1 class="restart-button">Restart</h1>
-  </div>
-  <script src="canvas.js"></script>
-  <script src="tools.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
