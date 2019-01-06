@@ -9,6 +9,7 @@ body {
 }
 
 .game-wrapper {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -62,4 +63,76 @@ h1.restart-button {
 h1.restart-button:hover {
   background: white;
   color: black;
+}
+
+
+/* Keyboard */
+.keyboard-toogle {
+  cursor: pointer;
+  width: 80px;
+  transform: rotate(90deg);
+  position: absolute;
+  left: -25px;
+  top: 200px;
+  -webkit-tap-highlight-color: transparent;
+}
+.keyboard-wrapper {
+  position: fixed;
+  bottom: 0px;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 600px;
+  font-size: 1.5rem;
+  transform: translateX(-120%);
+  transition: all 1.5s;
+}
+.keyboard-wrapper.active-keyboard {
+  transform: translateX(0%);
+  background: white;
+}
+.key {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: all 0.8s;
+}
+
+.key:hover {
+  background: black;
+  color: white;
+}
+
+span.key:before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: black;
+  
+  transform: scaleX(0) rotate(125deg);
+  bottom: 25px;
+  left: 0px;
+  transition: all 1s;
+}
+
+span.key.key-played:before {
+  transform: scaleX(1) rotate(125deg);
+}
+
+@media only screen and (max-width: 450px) {
+  .keyboard-wrapper {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  h2.result-message {
+    font-size: 1.5rem;
+  }
+  .words-container, .title h1 {
+    font-size: 2rem;
+  }
 }

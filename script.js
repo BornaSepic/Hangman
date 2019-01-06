@@ -1,5 +1,5 @@
 const drawOrder = [hangmanBody.drawHead, hangmanBody.drawTorso, hangmanBody.drawLeftArm, hangmanBody.drawRightArm, hangmanBody.drawLeftLeg, hangmanBody.drawRightLeg];
-const words = ['Zebra', 'Dog', 'Horse', 'Elephant', 'Cat', 'Mouse', 'Duck'];
+const words = ['Zebra', 'Dog', 'Horse', 'Elephant', 'Cat', 'Mouse', 'Duck', 'Beaver', 'Bird', 'Fox', 'Wolf'];
 const endBanner = document.querySelector('.result-banner');
 const endMessageContainer = document.querySelector('.result-message');
 const wordContainer = document.querySelector('.words-container');
@@ -29,12 +29,21 @@ function getNewLetters() {
 };
 
 document.addEventListener('keypress', function(event) {
+  letterPlayed(event.key);
+});
+
+function letterPlayed(letterPlayed) {
+  markKey(letterPlayed.toUpperCase());
   let mistakeMade = true;
   activeLetters.forEach((letter, index) => {
-    if (letter === event.key) {
-      const element = document.querySelector(`[data-letter-index="${index}"]`);
-      if(element.innerHTML != event.key) {
-        document.querySelector(`[data-letter-index="${index}"]`).innerHTML = event.key;
+    if (letter.toUpperCase() === letterPlayed.toUpperCase()) {
+      const letterDisplayed = document.querySelector(`[data-letter-index="${index}"]`);
+      if(letterDisplayed.innerHTML != letterPlayed) {
+        if(index === 0) {
+          document.querySelector(`[data-letter-index="${index}"]`).innerHTML = letterPlayed.toUpperCase();
+        } else {
+          document.querySelector(`[data-letter-index="${index}"]`).innerHTML = letterPlayed.toLowerCase();
+        }
         lettersFound++;
       }
       mistakeMade = false;
@@ -46,11 +55,21 @@ document.addEventListener('keypress', function(event) {
     return
   };
   checkForWin();
-});
+}
 
 
 document.querySelector('.restart-button').addEventListener('click', function() {
   resetGame();
+});
+
+document.querySelector('.keyboard-toogle').addEventListener('click', function() {
+  document.querySelector('.keyboard-wrapper').classList.toggle('active-keyboard');
+});
+
+document.querySelectorAll('span.key').forEach(element => {
+  element.addEventListener('click', (e) => {
+    letterPlayed(e.target.innerHTML);
+  });
 });
 
 getNewLetters();

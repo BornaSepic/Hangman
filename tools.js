@@ -49,10 +49,21 @@ function resetGame() {
 
 function gameEnd(result) {
   endBanner.classList.add('active');
+  unmarkKeys();
   if (result === 'won') {
     endMessageContainer.innerHTML = "Congrats! Have another go at it?";
   } else { 
     hangmanBody.killHangman();
     endMessageContainer.innerHTML = `The word was ${activeWord}! You'll get it next time though!`;
   }
+}
+
+function markKey(letterToCrossOver) {
+  document.querySelector(`[data-key-value=${letterToCrossOver}]`).classList.add('key-played');
+}
+
+function unmarkKeys() {
+  document.querySelectorAll('.key-played').forEach(playedKey => {
+    playedKey.classList.remove('key-played');
+  });
 }
